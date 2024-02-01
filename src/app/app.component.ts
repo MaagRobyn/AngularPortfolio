@@ -1,13 +1,22 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { MenuComponent } from './menu/menu.component';
 
 @Component({
   selector: 'app-root',
+  template: `
+    <main>
+      <header class="brand-name">
+        <app-menu></app-menu>
+      </header>
+      <section class="content">
+      </section>
+    </main>`,
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
+  imports: [RouterOutlet, MenuComponent],
+  // templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'AngularWebApp';
+  title = 'Robyn\'s Portfolio';
 }
