@@ -1,9 +1,22 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { MenuComponent } from './menu/menu.component';
 
 @Component({
   selector: 'app-root',
-  template: `<div>Hello {{value}}</div>`,
+  template: `
+    <main>
+      <header class="brand-name">
+        <app-menu></app-menu>
+      </header>
+      <section class="content">
+      </section>
+    </main>`,
+  standalone: true,
+  imports: [RouterOutlet, MenuComponent],
+  // templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
-  value = 'World';
+  title = 'Robyn\'s Portfolio';
 }
